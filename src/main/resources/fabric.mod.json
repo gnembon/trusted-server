@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "trusted-server",
-  "version": "1.0.0",
+  "version": "0.0.1",
 
   "name": "Trusted Server Mod",
   "description": "Removes extra checks and validations of client requests where it it most annoying",
