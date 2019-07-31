@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "trusted-server",
+  "version": "1.0.0",
+
+  "name": "Trusted Server Mod",
+  "description": "Removes extra checks and validations of client requests where it it most annoying",
+  "authors": [
+    "gnembon"
+  ],
+  "contact": {
+    "homepage": "https://github.com/gnembon/trusted-server",
+    "sources": "https://github.com/gnembon/trusted-server"
+  },
+
+  "license": "GNU LGPL V3",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+    ]
+  },
+  "mixins": [
+    "trusted.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.4.0"
+  }
+}
