@@ -1,10 +1,12 @@
 {
   "required": true,
   "package": "trusted_server.mixins",
-  "minVersion": "0.7.11",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MinecraftServer_noopMixin"
+    "MinecraftServer_noopMixin",
+    "PlayerEntity_vehicleDismountingMixin",
+    "ServerPlayerInteractionManager_ghostBlocksMixin",
+    "ServerPlayNetworkHandler_antiCheatDisabledMixin"
   ],
   "client": [
     "MinecraftClient_noopMixin"
