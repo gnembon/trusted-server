@@ -28,8 +28,9 @@ like flying, riding vehicles or mining blocks.
  not changed.
  
 ## Dismounting of vehicles
- - when player dismounts of a vehicle, it will receive an extra packet with vehicle positions. This should resolve some 
- issues with boats or horses to dissapear for the client after dismounting of such vehicle.
+ - when player dismounts of a vehicle, it will receive an extra packet with vehicle positions. This resolves SOME
+ issues with boats or horses to disappear for the client after dismounting of such vehicle. The core issue which is
+ wrong client position, which comes in later ticks is not solved yet, but we are working on it.
  - If a player was riding a mob (e.g. horse), dismounting would reset that mob's navigation. This should prevent horses
  wander into oblivion after stopped being ridden.
 

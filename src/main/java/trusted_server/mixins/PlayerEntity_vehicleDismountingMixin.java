@@ -1,11 +1,13 @@
 package trusted_server.mixins;
 
 import net.minecraft.client.network.packet.EntityPositionS2CPacket;
+import net.minecraft.client.network.packet.EntityS2CPacket;
 import net.minecraft.client.network.packet.VehicleMoveS2CPacket;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.ServerTask;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
@@ -34,11 +36,9 @@ public abstract class PlayerEntity_vehicleDismountingMixin extends Entity
             if (!getEntityWorld().isClient)
             {
                 ((ServerWorld) getEntityWorld()).method_14178().sendToNearbyPlayers(this, new EntityPositionS2CPacket(getVehicle()));
-                // not sure if player at this point is actually considered to be next to the exiting vehicle
+                // this doesn't solve the core problem. Still needs investigating.
                 ((ServerPlayerEntity)(Object)this).networkHandler.sendPacket(new EntityPositionS2CPacket(getVehicle()));
                 ((ServerPlayerEntity)(Object)this).networkHandler.sendPacket(new VehicleMoveS2CPacket(getVehicle()));
-                //Settings.LOG.error("Dismounting a vehicle at: "+getVehicle().getBlockPos());
-                //Settings.LOG.error("  Player at: "+this.getBlockPos());
             }
         }
     }
