@@ -1,5 +1,5 @@
 # trusted-server
-Tiny server mod removes extra server checks that would normally prevent certain invalid actions by hacked clients, 
+Tiny server mod for Minecraft 1.14.4 that removes extra server checks that would normally prevent certain invalid actions by hacked clients, 
 but often causes inability for players on laggy servers and with weak connections to do basic tasks,
 like flying, riding vehicles or mining blocks.
 
