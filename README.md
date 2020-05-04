@@ -1,5 +1,5 @@
 # trusted-server
-Tiny server mod removes extra server checks that would normally prevent certain invalid actions by hacked clients, 
+Tiny server mod for Minecraft 1.14.4 that removes extra server checks that would normally prevent certain invalid actions by hacked clients, 
 but often causes inability for players on laggy servers and with weak connections to do basic tasks,
 like flying, riding vehicles or mining blocks.
 
@@ -28,8 +28,9 @@ like flying, riding vehicles or mining blocks.
  not changed.
  
 ## Dismounting of vehicles
- - when player dismounts of a vehicle, it will receive an extra packet with vehicle positions. This should resolve some 
- issues with boats or horses to dissapear for the client after dismounting of such vehicle.
+ - when player dismounts of a vehicle, it will receive an extra packet with vehicle positions. This resolves SOME
+ issues with boats or horses to disappear for the client after dismounting of such vehicle. The core issue which is
+ wrong client position, which comes in later ticks is not solved yet, but we are working on it.
  - If a player was riding a mob (e.g. horse), dismounting would reset that mob's navigation. This should prevent horses
  wander into oblivion after stopped being ridden.
 
