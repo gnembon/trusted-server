@@ -2,7 +2,6 @@ package trusted_server.mixins;
 
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -47,25 +46,4 @@ public abstract class ServerPlayNetworkHandler_antiCheatDisabledMixin
         return Settings.isTrusted || serverPlayerEntity.isInTeleportationState();
     }
 
-    @Redirect(method = "onClientCommand", at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/server/network/ServerPlayerEntity;getVelocity()Lnet/minecraft/util/math/Vec3d;"
-    ))
-    private Vec3d getFallingVelocity(ServerPlayerEntity serverPlayerEntity)
-    {
-        if (Settings.isTrusted)
-            return new Vec3d(0,-1,0);
-        return serverPlayerEntity.getVelocity();
-    }
-
-    @Redirect(method = "onClientCommand", at = @At(
-            value = "FIELD",
-            target = "Lnet/minecraft/server/network/ServerPlayerEntity;onGround:Z"
-    ))
-    private boolean getNotOnGround(ServerPlayerEntity serverPlayerEntity)
-    {
-        if (Settings.isTrusted)
-            return false;
-        return serverPlayerEntity.onGround;
-    }
 }

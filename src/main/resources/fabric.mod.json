@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "trusted-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
 
   "name": "Trusted Server Mod",
   "description": "Removes extra checks and validations of client requests where it it most annoying",
@@ -25,6 +25,7 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.4.0"
+    "minecraft": "1.15.x",
+    "fabricloader": ">=0.7.1"
   }
 }
