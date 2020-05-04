@@ -3,13 +3,10 @@
   "package": "trusted_server.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MinecraftServer_noopMixin",
-    "PlayerEntity_vehicleDismountingMixin",
-    "ServerPlayerInteractionManager_ghostBlocksMixin",
+    "ServerPlayerInteractionManager_playerReachMixin",
     "ServerPlayNetworkHandler_antiCheatDisabledMixin"
   ],
   "client": [
-    "MinecraftClient_noopMixin"
   ],
   "injectors": {
     "defaultRequire": 1
